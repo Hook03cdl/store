@@ -1,0 +1,4 @@
+@import 'tailwindcss';
+@theme {
+	--color-humo: #f8f8f8;
+}
