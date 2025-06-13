@@ -1,4 +1,12 @@
 @import 'tailwindcss';
+
 @theme {
 	--color-humo: #f8f8f8;
+	--color-jungle: #b3cdd8;
+	--color-sandal: #aa8c69;
+	--color-bridal: #fdf6ef;
+}
+
+button {
+	cursor: pointer;
 }
