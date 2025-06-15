@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function Footer() {
 	return (
 		<footer>
-			<section className="grid gap-5 place-items-center py-10 bg-bridal">
-				<p className="font-semibold text-lg">Diseña tu prenda</p>
+			<section className="grid gap-5 place-items-center py-20 p-10 bg-bridal">
+				<p className="font-semibold text-lg uppercase">Diseña tu prenda</p>
 				<p className="text-center">
 					SI EL PRODUCTO QUE NECESITAS NO SE ENCUENTRA TAL CÓMO TE GUSTARÍA EN
 					ESTA SECCIÓN, PUEDES DISEÑAR TU PRENDA! ¡ELIGE EL TIPO, TELA Y COLOR A
@@ -14,7 +14,7 @@ export default function Footer() {
 					COMENZAR
 				</button>
 			</section>
-			<section className="flex justify-evenly bg-jungle py-10">
+			<section className="grid place-content-center  md:flex md:flex-wrap md:justify-evenly gap-10 bg-jungle py-20 p-10">
 				<Image
 					src={'/assets/logo.png'}
 					alt={'CUCUFATE'}

@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider  = "mysql"
+  url  	    = env("DATABASE_URL")
+}
+
+
+
+model Products{
+    pid              String @id @default(uuid())
+    sku             String @unique
+    name            String @db.VarChar(255)
+    stock           Int
+    category        CategoryType
+    classification  Gender
+    rating          Float
+    image           String
+    discount        Discount?
+    tags            String
+    age_range       String @db.VarChar(50)
+    material        String @db.VarChar(255)
+    price           Float
+
+    reviews         Reviews[]
+
+
+    createAt        DateTime @default(now())
+    updateAt        DateTime @updatedAt
+
+
+}
+
+model Reviews{
+
+    id          String   @id @default(uuid())
+    productId   String   @db.VarChar(255)
+    product     Products @relation(fields: [productId], references: [pid])
+    rating      Float
+    comment     String   @db.Text
+
+    createdAt   DateTime @default(now())
+
+}
+
+
+
+
+
+enum Discount {
+    FIFTY  @map("50%")
+    FORTY  @map("40%")
+    THIRTY @map("30%")
+}
+
+enum CategoryType{
+    pelele
+    vestido
+    camisa
+    short
+    cubrepañal
+    peto
+    ranita
+    complemento
+}
+
+enum Gender {
+    niño
+    niña
+}
