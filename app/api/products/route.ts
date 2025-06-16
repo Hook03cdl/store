@@ -32,7 +32,10 @@ export async function GET(req: NextRequest) {
 		console.log(error);
 
 		return NextResponse.json(
-			{ error: 'Error interno del servidor' },
+			{
+				error:
+					'A ocurrido un problema con el servidor, vuelvalo intente mas tarde',
+			},
 			{
 				status: 500,
 			}

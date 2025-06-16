@@ -2,7 +2,8 @@ import { Search } from 'lucide-react';
 
 type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function Input({ ...props }: InputProps) {
+export default function InputSearch({ ...props }: InputProps) {
+	
 	return (
 		<div className="flex gap-3 outline-2 px-3 p-2 rounded-md outline-jungle">
 			<Search />

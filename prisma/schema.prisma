@@ -12,7 +12,7 @@ datasource db {
 
 model Products{
     pid              String @id @default(uuid())
-    sku             String @unique
+    // sku             String @unique
     name            String @db.VarChar(255)
     stock           Int
     category        CategoryType

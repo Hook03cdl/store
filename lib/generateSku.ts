@@ -6,9 +6,9 @@ export default function generateSku(
 	age_range: string,
 	index: number
 ) {
-	return `${category.slice(0, 4).toUpperCase()}-${classification
-		.slice(0, 2)
-		.toUpperCase()}-${material.slice(0, 3).toUpperCase()}-${age_range}-${index
-		.toString()
-		.padStart(3, '0')}`;
+	return `${name.slice(0, 3)}-${category
+		.slice(0, 3)
+		.toUpperCase()}-${classification.slice(0, 3).toUpperCase()}-${material
+		.slice(0, 3)
+		.toUpperCase()}-${age_range}-${index.toString().padStart(3, '0')}`;
 }

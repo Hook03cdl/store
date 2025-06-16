@@ -24,15 +24,15 @@ export default function CardProduct({
 }: CardProductsProps) {
 	const route = useRouter();
 	return (
-		<div className="bg-stone-100 shadow-xl space-y-3 p-3 rounded-lg w-fit">
+		<div className="bg-stone-100 shadow-xl space-y-3 p-3 rounded-lg w-64">
 			<img
 				src={image || '/assets/logo.png'}
-				className="size-56 aspect-square object-contain rounded-md"
+				className="h-auto w-full aspect-square object-contain rounded-md"
 				alt="Nombre"
 			/>
 			<div>
 				<div className="flex justify-between items-center gap-3">
-					<p>{name}</p>
+					<p className="truncate text-sm">{name}</p>
 					<div className="flex gap-1">
 						{Array.from({ length: 5 }, (_s, i) =>
 							i < rating ? (
@@ -48,7 +48,9 @@ export default function CardProduct({
 			</div>
 			<button
 				onClick={() => route.push(`/product/${id}`)}
-				className="w-full text-sandal outline-2 outline-sandal rounded-xs p-2"
+				className="relative w-full text-sandal outline-2 outline-sandal p-2 mb-3 hover:text-humo z-10
+				after:absolute after:bottom-0 after:left-0 after:w-full after:bg-sandal after:h-0 hover:after:h-full after:transition-[height] after:duration-300 after:-z-10
+				"
 			>
 				COMPRAR
 			</button>

@@ -1,15 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import CardProduct from '@/components/CardProduct';
-import Filter, { ButtonFilter } from '@/components/Filter';
-import Input from '@/components/Input';
+import Filter from '@/components/filter/Filter';
+import Input from '@/components/InputSearch';
+import { MovileFilter } from '@/components/filter/MovileFilter';
 import { Products } from '@prisma/client';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Unplug } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function Home() {
-	const products: Products[] = await fetch(
-		'http://localhost:3000/api/products'
-	).then((res) => res.json());
+	const res = await fetch('http://localhost:3000/api/products');
+	if (!res.ok) {
+		const errorMsg = await res.json();
+		return (
+			<section className="grid place-items-center gap-10 py-20 px-5">
+				<Unplug size={128} />
+				<p className="text-4xl text-center">{errorMsg.error}</p>
+			</section>
+		);
+	}
+
+	const products: Products[] = await res.json();
+
 	return (
 		<section>
 			<div className="w-full">
@@ -32,23 +43,24 @@ export default async function Home() {
 					</div>
 					<div className="flex gap-5 ">
 						<Input placeholder="Buscar" />
-						<ButtonFilter />
+						<MovileFilter />
 					</div>
 				</div>
 				<div className="flex gap-10">
 					<div className="flex-1 space-y-5">
 						<div className="flex flex-wrap justify-center gap-6 ">
-							{products.map((p) => (
-								<CardProduct
-									id={p.pid}
-									key={p.pid}
-									image={p.image}
-									name={p.name}
-									price={p.price}
-									category={p.category}
-									rating={p.rating}
-								/>
-							))}
+							{products &&
+								products.map((p) => (
+									<CardProduct
+										id={p.pid}
+										key={p.pid}
+										image={p.image}
+										name={p.name}
+										price={p.price}
+										category={p.category}
+										rating={p.rating}
+									/>
+								))}
 						</div>
 						<div className="grid place-items-center py-20">
 							<button className="bg-sandal justify-self-center text-humo font-semibold px-10 py-2">
