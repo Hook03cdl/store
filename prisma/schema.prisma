@@ -19,7 +19,7 @@ model Products{
     classification  Gender
     rating          Float
     image           String
-    discount        Discount?
+    discount        Int?
     tags            String
     age_range       String @db.VarChar(50)
     material        String @db.VarChar(255)
@@ -46,15 +46,6 @@ model Reviews{
 
 }
 
-
-
-
-
-enum Discount {
-    FIFTY  @map("50%")
-    FORTY  @map("40%")
-    THIRTY @map("30%")
-}
 
 enum CategoryType{
     pelele

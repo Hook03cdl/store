@@ -1,18 +1,19 @@
 'use client';
 
-export default function CheckBox({
-	content,
-	className,
-	onClick,
-}: {
-	content: React.ReactNode;
+interface CheckBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+	label: React.ReactNode;
 	className?: string;
-	onClick?: (e: React.MouseEvent<HTMLInputElement>) => void;
-}) {
+}
+
+export default function CheckBox({
+	label,
+	className,
+	...props
+}: CheckBoxProps) {
 	return (
 		<label className={`flex gap-2 items-center cursor-pointer ${className}`}>
-			<input type="checkbox" className="accent-sandal" onClick={onClick} />
-			{content}
+			<input type="checkbox" className="accent-sandal" {...props} />
+			{label}
 		</label>
 	);
 }

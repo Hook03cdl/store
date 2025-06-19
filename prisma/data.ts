@@ -12,7 +12,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.5,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/21.jpg',
-		discount: 'FIFTY',
+		discount: 50,
 		tags: 'pelele,algodón,azul,niño',
 		age_range: '0-3',
 		material: 'Algodón',
@@ -26,7 +26,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.2,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/31.jpg',
-		discount: 'FORTY',
+		discount: 40,
 		tags: 'pelele,estampado,animal,niña',
 		age_range: '3-6',
 		material: 'Algodón',
@@ -56,7 +56,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.8,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/12.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'vestido,flores,primavera,niña',
 		age_range: '2-3',
 		material: 'Lino',
@@ -84,7 +84,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.9,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/32.jpg',
-		discount: 'FIFTY',
+		discount: 50,
 		tags: 'vestido,fiesta,rosa,niña',
 		age_range: '4-5',
 		material: 'Seda',
@@ -114,7 +114,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.1,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/23.jpg',
-		discount: 'FORTY',
+		discount: 40,
 		tags: 'camisa,cuadros,clásica,niño',
 		age_range: '4-5',
 		material: 'Algodón',
@@ -128,7 +128,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.7,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/43.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'camisa,blanca,elegante,niña',
 		age_range: '5-6',
 		material: 'Algodón',
@@ -158,7 +158,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.6,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/25.jpg',
-		discount: 'FIFTY',
+		discount: 50,
 		tags: 'short,flores,verano,niña',
 		age_range: '2-3',
 		material: 'Algodón',
@@ -188,7 +188,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.5,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/17.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'cubrepañal,rayas,niño',
 		age_range: '1-2',
 		material: 'Algodón',
@@ -216,7 +216,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.3,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/37.jpg',
-		discount: 'FIFTY',
+		discount: 50,
 		tags: 'cubrepañal,básico,blanco,niño',
 		age_range: '3-4',
 		material: 'Algodón',
@@ -246,7 +246,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.8,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/29.jpg',
-		discount: 'FORTY',
+		discount: 40,
 		tags: 'peto,rosa,algodón,niña',
 		age_range: '3-4',
 		material: 'Algodón',
@@ -260,7 +260,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.4,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/39.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'peto,corto,verano,niño',
 		age_range: '4-5',
 		material: 'Lino',
@@ -290,7 +290,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.7,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/21.jpg',
-		discount: 'FIFTY',
+		discount: 50,
 		tags: 'ranita,estampada,flores,niña',
 		age_range: '2-3',
 		material: 'Algodón',
@@ -304,7 +304,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.3,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/31.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'ranita,polar,invierno,niño',
 		age_range: '3-4',
 		material: 'Polar',
@@ -334,7 +334,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.8,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/female/512/37.jpg',
-		discount: 'FORTY',
+		discount: 40,
 		tags: 'cinta,cabello,rosa,niña',
 		age_range: '1-2',
 		material: 'Algodón',
@@ -348,7 +348,7 @@ export const productData: Prisma.ProductsCreateInput[] = [
 		rating: 4.4,
 		image:
 			'https://cdn.jsdelivr.net/gh/faker-js/assets-person-portrait/male/512/47.jpg',
-		discount: 'THIRTY',
+		discount: 30,
 		tags: 'babero,impermeable,niño',
 		age_range: '0-1',
 		material: 'Poliéster',

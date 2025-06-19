@@ -19,9 +19,15 @@ export async function GET() {
 			_min: { price: true },
 			_max: { price: true },
 		});
+		const discounts = await prisma.products.groupBy({
+			by: 'discount',
+			orderBy: { discount: 'desc' },
+			_count: { discount: true },
+			where: { NOT: { discount: null } },
+		});
 
 		return NextResponse.json(
-			{ categoryOptions, classificationOptions, minMaxPrice },
+			{ categoryOptions, classificationOptions, minMaxPrice, discounts },
 			{ status: 200 }
 		);
 	} catch (error) {

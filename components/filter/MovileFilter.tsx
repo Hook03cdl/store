@@ -1,10 +1,12 @@
 'use client';
 
-import { FilterIcon, Filter, ChevronLeft } from 'lucide-react';
+import { FilterIcon, ChevronLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
+// import Filter from './Filter';
 
 export function MovileFilter() {
 	const [isOpen, setIsOpen] = useState(false);
+
 	useEffect(() => {
 		if (isOpen) {
 			document.body.classList.add('overflow-hidden');
@@ -23,7 +25,7 @@ export function MovileFilter() {
 					isOpen ? 'translate-x-0' : 'translate-x-full'
 				} transition-transform duration-500 z-50`}
 			>
-				<Filter className="overflow-y-auto pb-10" />
+				{/* <Filter className="overflow-y-auto pb-10" /> */}
 				<div className="flex gap-2">
 					<button
 						className="flex gap-3 bg-sandal text-humo p-2 px-3 rounded-md"

@@ -25,9 +25,9 @@ export default function Accordion({
 			</button>
 
 			<motion.div
-				initial={false}
-				animate={isOpen ? { height: 'auto' } : { height: 0 }}
-				transition={{ duration: 0.3, type: 'spring' }}
+				initial={{ opacity: 0 }}
+				animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0 }}
+				transition={{ duration: 0.5, type: 'spring' }}
 			>
 				<AnimatePresence>
 					{isOpen && <div className="py-3 px-3">{children}</div>}

@@ -1,16 +1,19 @@
 import { FilterProps } from '@/interface/filter';
 import Accordion from '../Accordion';
-import CheckBox from '../CheckBox';
 import OptionFilter from './OptionFilter';
-import MultiRange from '../MultiRange';
+import MultiRange from '../RangePrice';
 
 export default async function Filter({ className }: { className?: string }) {
 	const res = await fetch('http://localhost:3000/api/filter');
 
-	if (!res.ok) return null;
+	if (!res.ok) return <></>;
 
-	const { classificationOptions, categoryOptions, minMaxPrice }: FilterProps =
-		await res.json();
+	const {
+		classificationOptions,
+		categoryOptions,
+		minMaxPrice,
+		discounts,
+	}: FilterProps = await res.json();
 
 	return (
 		<aside className={` divide-y-2 divide-stone-300 ${className}`}>
@@ -35,31 +38,20 @@ export default async function Filter({ className }: { className?: string }) {
 				))}
 			</Accordion>
 			<Accordion textButton="Precio">
-				<MultiRange />
-				<div className="flex items-center gap-2 py-3">
-					<label className="flex items-center gap-2 p-2 px-3 rounded-md outline-1">
-						<span>$</span>
-						<input
-							type="text"
-							className="focus:outline-0 w-full"
-							placeholder={String(minMaxPrice._min.price)}
-						/>
-					</label>
-					<span>-</span>
-					<label className="flex items-center gap-2 p-2 px-3 rounded-md outline-1">
-						<span>$</span>
-						<input
-							type="text"
-							className="focus:outline-0 w-full"
-							placeholder={String(minMaxPrice._max.price)}
-						/>
-					</label>
-				</div>
+				<MultiRange min={minMaxPrice._min.price} max={minMaxPrice._max.price} />
 			</Accordion>
 			<Accordion textButton="Promociones">
-				<CheckBox content="50%" />
-				<CheckBox content="40%" />
-				<CheckBox content="30%" />
+				{discounts.map((d) => (
+					<OptionFilter
+						text={`${d.discount}%`}
+						filter={{
+							param: 'descuento',
+							value: String(d.discount),
+						}}
+						stock={d?._count?.discount ?? 0}
+						key={`${d.discount}-${d._count.discount} `}
+					/>
+				))}
 			</Accordion>
 		</aside>
 	);
